@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class WalkStairs : MonoBehaviour
 {
-    Transform parent;
 
     void Start()
     {
-        parent = transform.parent;
     }
 
     void Update()
@@ -18,10 +16,10 @@ public class WalkStairs : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 1)
+        if (collision.gameObject.tag == "StairCollider")
         {
-            parent.position += new Vector3(0, 0.485f, 0);
-            Debug.Log("I touched StairMap");
+            Debug.Log(this.transform.name);
+            this.transform.parent.position += new Vector3(0, 0.485f, 0);
         }
     }
 

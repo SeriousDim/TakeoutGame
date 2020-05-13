@@ -25,14 +25,13 @@ public class PlayerControl : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Move(Input.GetAxis("Horizontal"));
-        Jump((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)));
         ClimbLadder();
     }
 
     void Update()
     {
-        
+        Move(Input.GetAxis("Horizontal"));
+        Jump((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)));
     }
 
     void Jump(bool b)
@@ -42,6 +41,16 @@ public class PlayerControl : MonoBehaviour
             body.AddForce(Vector2.up * jumpForce);
             onGround = false;
         }
+    }
+
+    void Move(float direction)
+    {
+        Vector2 newPosition = Vector2.right * direction * speed * Time.deltaTime;
+
+        if ((direction > 0 && renderer.flipX) || (direction < 0 && !renderer.flipX)) renderer.flipX = !renderer.flipX;
+
+        body.position += newPosition;
+        animator.SetBool("running", (direction != 0));
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -60,27 +69,17 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-    void Move(float direction)
-    {
-        Vector2 newPosition = Vector2.right * direction * speed;
-
-        if ((direction > 0 && renderer.flipX) || (direction < 0 && !renderer.flipX)) renderer.flipX = !renderer.flipX;
-
-        body.position += newPosition;
-        animator.SetBool("running", (direction != 0));
-    }
-
     void ClimbLadder()
     {
         if (onLadder)
         {
             if (Input.GetKey(KeyCode.W))
             {
-                gameObject.transform.position += new Vector3(0, speed, 0);
+                gameObject.transform.position += new Vector3(0, speed * 0.02f, 0);
             }
             if (Input.GetKey(KeyCode.S))
             {
-                gameObject.transform.position += new Vector3(0, -speed, 0);
+                gameObject.transform.position += new Vector3(0, -speed * 0.02f, 0);
             }
         }
     }

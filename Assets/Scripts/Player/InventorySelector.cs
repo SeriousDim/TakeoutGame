@@ -7,6 +7,7 @@ using UnityEditor;
 public class InventorySelector : MonoBehaviour
 {
     public GameObject[] items;
+    public bool interact = true;
 
     int INVENTORY_SIZE = 5;
     int selected = 0;

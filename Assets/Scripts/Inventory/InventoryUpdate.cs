@@ -14,15 +14,15 @@ public class InventoryUpdate : MonoBehaviour
 
     private void Awake()
     {
-        GameObject t = transform.Find("bg").gameObject;
-        bg = t.GetComponent<Image>();
-        t = transform.Find("sprite").gameObject;
-        sprite = t.GetComponent<Image>();
+        
     }
 
     void Start()
     {
-        
+        GameObject t = transform.Find("bg").gameObject;
+        bg = t.GetComponent<Image>();
+        t = transform.Find("sprite").gameObject;
+        sprite = t.GetComponent<Image>();
     }
 
     void Update()
