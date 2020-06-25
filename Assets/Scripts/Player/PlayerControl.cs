@@ -6,6 +6,7 @@ public class PlayerControl : MonoBehaviour
 {
     public float speed;
     public float jumpForce;
+    public float ladderSpeed;
 
     SpriteRenderer renderer;
     Animator animator;
@@ -14,6 +15,7 @@ public class PlayerControl : MonoBehaviour
 
     private bool onGround = true;
     private bool onLadder = false;
+    private float gravityScale;
 
     void Start()
     {
@@ -21,17 +23,20 @@ public class PlayerControl : MonoBehaviour
         animator = GetComponent<Animator>();
         collider = GetComponent<BoxCollider2D>();
         body = GetComponent<Rigidbody2D>();
+
+        gravityScale = body.gravityScale;
     }
 
     private void FixedUpdate()
     {
-        ClimbLadder();
+        
     }
 
     void Update()
     {
         Move(Input.GetAxis("Horizontal"));
         Jump((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)));
+        ClimbLadder();
     }
 
     void Jump(bool b)
@@ -55,7 +60,7 @@ public class PlayerControl : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Collider" && collision.gameObject.layer == 0)
+        if (collision.gameObject.tag == "Collider" /*&& collision.gameObject.layer == 0*/)
         {
             onGround = true;
         }
@@ -63,9 +68,9 @@ public class PlayerControl : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Collider" && collision.gameObject.layer == 0)
+        if (collision.gameObject.tag == "Collider" /*&& collision.gameObject.layer == 0*/)
         {
-            // onGround = false;
+            onGround = false;
         }
     }
 
@@ -75,11 +80,11 @@ public class PlayerControl : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.W))
             {
-                gameObject.transform.position += new Vector3(0, speed * 0.02f, 0);
+                gameObject.transform.position += new Vector3(0, ladderSpeed, 0) * Time.deltaTime;
             }
             if (Input.GetKey(KeyCode.S))
             {
-                gameObject.transform.position += new Vector3(0, -speed * 0.02f, 0);
+                gameObject.transform.position += new Vector3(0, -ladderSpeed, 0) * Time.deltaTime;
             }
         }
     }
@@ -95,7 +100,7 @@ public class PlayerControl : MonoBehaviour
     public void onLadderExit()
     {
         onLadder = false;
-        body.gravityScale = 1;
+        body.gravityScale = gravityScale;
         // body.bodyType = RigidbodyType2D.Dynamic;
     }
 
