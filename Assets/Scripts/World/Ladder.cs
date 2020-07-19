@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class Ladder : MonoBehaviour
 {
-    public GameObject player;
-
     private PlayerControl control;
 
     // Start is called before the first frame update
     void Start()
     {
-        control = player.GetComponent<PlayerControl>();
+        control = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControl>();
     }
 
     void Update()

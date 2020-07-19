@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Spriter2UnityDX;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class PlayerControl : MonoBehaviour
     public float ladderSpeed;
 
     SpriteRenderer renderer;
+    EntityRenderer entityRenderer;
     Animator animator;
     BoxCollider2D collider;
     Rigidbody2D body;
@@ -20,6 +22,7 @@ public class PlayerControl : MonoBehaviour
     void Start()
     {
         renderer = GetComponent<SpriteRenderer>();
+        entityRenderer = GetComponent<EntityRenderer>();
         animator = GetComponent<Animator>();
         collider = GetComponent<BoxCollider2D>();
         body = GetComponent<Rigidbody2D>();
@@ -51,16 +54,29 @@ public class PlayerControl : MonoBehaviour
     void Move(float direction)
     {
         Vector2 newPosition = Vector2.right * direction * speed * Time.deltaTime;
+        animator.SetBool("running", (direction != 0));
 
-        if ((direction > 0 && renderer.flipX) || (direction < 0 && !renderer.flipX)) renderer.flipX = !renderer.flipX;
+        if (renderer != null)
+        {
+            if ((direction > 0 && renderer.flipX) || (direction < 0 && !renderer.flipX))
+                renderer.flipX = !renderer.flipX;
+        } else
+        {
+            if ((direction > 0 && transform.localScale.x > 0) || (direction < 0 && transform.localScale.x < 0))
+            {
+                Vector3 newScale = transform.localScale;
+                newScale.x = -newScale.x;
+                transform.localScale = newScale;
+            }
+        }
 
         body.position += newPosition;
-        animator.SetBool("running", (direction != 0));
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Collider" /*&& collision.gameObject.layer == 0*/)
+        string tag = collision.gameObject.tag;
+        if (tag == "Collider" || tag == "Glass" || tag == "Paper" || tag == "Metal" || tag == "StairCollider") /*&& collision.gameObject.layer == 0*/
         {
             onGround = true;
         }
@@ -68,7 +84,8 @@ public class PlayerControl : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Collider" /*&& collision.gameObject.layer == 0*/)
+        string tag = collision.gameObject.tag;
+        if (tag == "Collider" || tag == "StairCollider")
         {
             onGround = false;
         }
