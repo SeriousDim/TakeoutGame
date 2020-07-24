@@ -93,7 +93,7 @@
                     <bone x="-10.714286" y="1.071429" angle="0"/>
                 </key>
                 <key id="1" time="100">
-                    <bone x="-10.714286" y="1.071429" angle="318.14925"/>
+                    <bone x="-10.714286" y="1.071429" angle="200.521474"/>
                 </key>
                 <key id="2" time="300" spin="-1">
                     <bone x="-10.714286" y="1.071429" angle="4.364468"/>
@@ -235,7 +235,7 @@
             </timeline>
             <timeline id="6" obj="1" name="bone_001" object_type="bone">
                 <key id="0">
-                    <bone x="93.285714" y="1.071429"/>
+                    <bone x="93.285714" y="1.071429" angle="0"/>
                 </key>
                 <key id="1" time="100" spin="-1">
                     <bone x="93.285714" y="1.071429" angle="20"/>
@@ -246,7 +246,7 @@
             </timeline>
             <timeline id="7" obj="2" name="bone_002" object_type="bone">
                 <key id="0" spin="-1">
-                    <bone x="93.285714" y="1.071429"/>
+                    <bone x="93.285714" y="1.071429" angle="0"/>
                 </key>
                 <key id="1" time="100">
                     <bone x="93.285714" y="1.071429" angle="340"/>
@@ -257,7 +257,7 @@
             </timeline>
             <timeline id="8" obj="3" name="bone_003" object_type="bone">
                 <key id="0" spin="-1">
-                    <bone x="-10.714286" y="1.071429"/>
+                    <bone x="-10.714286" y="1.071429" angle="0"/>
                 </key>
                 <key id="1" time="100">
                     <bone x="-10.714286" y="1.071429" angle="330"/>
@@ -268,7 +268,7 @@
             </timeline>
             <timeline id="9" obj="4" name="bone_004" object_type="bone">
                 <key id="0">
-                    <bone x="-10.714286" y="1.071429"/>
+                    <bone x="-10.714286" y="1.071429" angle="0"/>
                 </key>
                 <key id="1" time="100" spin="-1">
                     <bone x="-10.714286" y="1.071429" angle="30"/>

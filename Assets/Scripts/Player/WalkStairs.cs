@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WalkStairs : MonoBehaviour
 {
+    public bool upperApproval = true;
+    public bool lowerApproval = false;
 
     void Start()
     {
@@ -11,15 +13,11 @@ public class WalkStairs : MonoBehaviour
 
     void Update()
     {
-
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "StairCollider")
+        if (upperApproval && lowerApproval)
         {
-            Debug.Log(this.transform.name);
-            this.transform.parent.position += new Vector3(0, 0.485f, 0);
+            transform.parent.position += new Vector3(0, 0.485f, 0);
+            upperApproval = true;
+            lowerApproval = false;
         }
     }
 

@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
     public GameObject aboutPanel;
     public GameObject levelSelector;
     public GameObject mainMenu;
+    public GameObject loading;
     Animator aboutPanelAnimator;
     Animator levelSelectorAnimator;
 
@@ -18,29 +20,24 @@ public class MenuManager : MonoBehaviour
 
     public void ShowAboutPanel(bool b)
     {
-        if (b)
-        {
-            aboutPanelAnimator.SetBool("clicked", true);
-        } else
-        {
-            aboutPanelAnimator.SetBool("clicked", false);
-        }
+        mainMenu.SetActive(!b);
+        aboutPanelAnimator.SetBool("clicked", b);
     }
 
     public void ShowLevelSelector(bool b)
     {
-        if (b)
-        {
-            levelSelectorAnimator.SetBool("clicked", true);
-        }
-        else
-        {
-            levelSelectorAnimator.SetBool("clicked", false);
-        }
+        mainMenu.SetActive(!b);
+        levelSelectorAnimator.SetBool("clicked", b);
     }
 
     public void CloseApp()
     {
         Application.Quit();
+    }
+
+    public void OpenLevel(string s)
+    {
+        loading.SetActive(true);
+        SceneManager.LoadScene(s);
     }
 }

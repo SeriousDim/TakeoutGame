@@ -6,8 +6,11 @@ using Spriter2UnityDX;
 public class PlayerControl : MonoBehaviour
 {
     public float speed;
+    public float runSpeed;
     public float jumpForce;
     public float ladderSpeed;
+
+    public float fovMax;
 
     SpriteRenderer renderer;
     EntityRenderer entityRenderer;
@@ -15,7 +18,7 @@ public class PlayerControl : MonoBehaviour
     BoxCollider2D collider;
     Rigidbody2D body;
 
-    private bool onGround = true;
+    public bool onGround = true;
     private bool onLadder = false;
     private float gravityScale;
 
@@ -47,7 +50,7 @@ public class PlayerControl : MonoBehaviour
         if (b && onGround && !onLadder)
         {
             body.AddForce(Vector2.up * jumpForce);
-            onGround = false;
+            //onGround = false;
         }
     }
 
@@ -71,24 +74,6 @@ public class PlayerControl : MonoBehaviour
         }
 
         body.position += newPosition;
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        string tag = collision.gameObject.tag;
-        if (tag == "Collider" || tag == "Glass" || tag == "Paper" || tag == "Metal" || tag == "StairCollider") /*&& collision.gameObject.layer == 0*/
-        {
-            onGround = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        string tag = collision.gameObject.tag;
-        if (tag == "Collider" || tag == "StairCollider")
-        {
-            onGround = false;
-        }
     }
 
     void ClimbLadder()
