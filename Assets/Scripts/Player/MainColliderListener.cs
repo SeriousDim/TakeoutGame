@@ -16,7 +16,7 @@ public class MainColliderListener : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         string t = collision.gameObject.tag;
-        if (t == "Collider" || t == "Glass" || t == "Paper" || t == "Metal"/* || t == "StairCollider"*/)
+        if (t == "Collider" || t == "Glass" || t == "Paper" || t == "Metal" || t == "Plastic"/* || t == "StairCollider"*/)
         {
             Debug.Log("-->> " + t);
             lastTag = t;

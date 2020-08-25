@@ -48,6 +48,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -59,6 +60,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -107,17 +109,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.15602827, y: 0.16259298}
-      - {x: 0.11516571, y: 0.507243}
-      - {x: 0.036110878, y: 0.520082}
-      - {x: -0.13499999, y: 0.53999996}
-      - {x: -0.13792038, y: 0.15757084}
+    - - {x: 0.10649204, y: 0.49889252}
+      - {x: -0.09166956, y: 0.54100466}
       - {x: -0.265, y: 0.099999994}
-      - {x: -0.265, y: -0.45999998}
-      - {x: -0.255, y: -0.53999996}
+      - {x: -0.24082422, y: -0.54228973}
       - {x: 0.24499999, y: -0.53999996}
-      - {x: 0.255, y: -0.52}
-      - {x: 0.265, y: -0.39}
       - {x: 0.265, y: 0.08}
 --- !u!114 &1728990631231444405
 MonoBehaviour:

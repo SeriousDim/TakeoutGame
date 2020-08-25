@@ -9,6 +9,7 @@ public class PaperBox : MonoBehaviour
 
     private InventorySelector inventory;
     private PointsCounter counter;
+    private GameObject mainCollider;
 
     // Start is called before the first frame update
     void Start()
@@ -26,10 +27,11 @@ public class PaperBox : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        Debug.Log("RubbishBox: tag = "+collision.gameObject.tag);
         GameObject rubbish = inventory.GetSelectedItem();
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (collision.gameObject.tag == "Player" && rubbish != null)
+            if (collision.gameObject.name == "MainCollider" && rubbish != null)
             {
                 if (rubbish.tag == rubbishType)
                 {

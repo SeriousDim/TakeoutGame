@@ -13,6 +13,7 @@ TagManager:
   - StairCollider
   - LadderMap
   - Collection
+  - MainCollider
   layers:
   - Default
   - TransparentFX

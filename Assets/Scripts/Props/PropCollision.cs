@@ -21,6 +21,7 @@ public class PropCollision : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log("PropCollision: tag = "+collision.gameObject.tag);
         if (collision.gameObject.tag == "Player" && inventory.interact)
         {
             inventory.AddItem(gameObject);
