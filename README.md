@@ -1,7 +1,7 @@
 # TrashCraft (Chistoman Game)
 ## ВАЖНО! Работа с физикой
 1. Все префабы должны иметь **минимум полигонов**
-1. CompositeCollider2D должен иметь поле GeometryType = Polygons
+1. CompositeCollider2D у TileMap должен иметь поле GeometryType = Polygons
 
 ## Deprecated forever
 1. Тег _StairCollider_
