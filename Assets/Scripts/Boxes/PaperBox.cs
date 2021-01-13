@@ -36,7 +36,7 @@ public class PaperBox : MonoBehaviour
                 if (rubbish.tag == rubbishType)
                 {
                     inventory.ThrowIntoBox();
-                    counter.SetPoints(pointsPerItem);
+                    counter.AddPoints(pointsPerItem);
                     Debug.Log("Points: " + counter.GetPoints());
                 }
             }

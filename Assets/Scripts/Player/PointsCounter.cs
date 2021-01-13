@@ -25,10 +25,10 @@ public class PointsCounter : MonoBehaviour
         return points;
     }
 
-    public void SetPoints(int newPoints)
+    public void AddPoints(int newPoints)
     {
         points += newPoints;
-        text.text = "Очки: "+points;
+        text.text = ""+points;
     }
 
 }
