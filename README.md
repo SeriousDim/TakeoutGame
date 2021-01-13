@@ -1,4 +1,4 @@
-# TrashCraft (Chistoman Game)
+# TrashCraft
 ## ВАЖНО! Работа с физикой
 1. Все префабы должны иметь **минимум полигонов**
 1. CompositeCollider2D у TileMap должен иметь поле GeometryType = Polygons
