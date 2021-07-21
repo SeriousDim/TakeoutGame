@@ -14,15 +14,15 @@ public class InventorySelector : MonoBehaviour
 
     [Header("Values")]
     public bool interact = true;
+    public int INVENTORY_SIZE = 5;
+    public int COLLECTION_INVENTORY_SIZE = 1;
 
-    int INVENTORY_SIZE = 5;
     int selected = 0;
     InventoryUpdate[] managers;
     GameObject[] inventory;
 
-    int COLLECTION_INVENTORY_SIZE = 1;
     InventoryUpdate[] colManagers;
-    GameObject[] colInventory;
+    public GameObject[] colInventory;
 
     LeftRubbishNotifier notifier;
 

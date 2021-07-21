@@ -67,7 +67,7 @@ public class Level1Tutorial : AbstractTutorial
             "можно будет покупать вещи, развивать персонажа, а также увеличивать " + Blue("популярность") +
             "идеи Гринмена.";
 
-        SetButtonListener(() => Tutorial3_2());
+        SetButtonListener(() => Tutorial3_3());
     }
 
     public void Tutorial3_2()

@@ -9,7 +9,7 @@ public class PointsCounter : MonoBehaviour
 
     private Animator animator;
 
-    int points = 0;
+    public int points = 0;
     TextMeshProUGUI text;
 
     void Start()

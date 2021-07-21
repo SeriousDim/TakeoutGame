@@ -12,6 +12,8 @@ public class MenuManager : MonoBehaviour
     Animator aboutPanelAnimator;
     Animator levelSelectorAnimator;
 
+    private DataHolder dataHolder;
+
     void Start()
     {
         aboutPanelAnimator = aboutPanel.GetComponent<Animator>();

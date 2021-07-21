@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Takeout.DataWrappers;
 
 public class PropCollision : MonoBehaviour
 {
+    public ColRubbish colRubObj;
+
     private InventorySelector inventory;
 
     // Start is called before the first frame update
