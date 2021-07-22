@@ -81,7 +81,6 @@ public class LevelManager : MonoBehaviour
         if (rubbish.transform.childCount == 0 && !finished)
         {
             FinishLevel();
-            finished = true;
         }
     }
 
@@ -171,6 +170,7 @@ public class LevelManager : MonoBehaviour
 
     public virtual void FinishLevel()
     {
+        finished = true;
         Time.timeScale = 0;
 
         // создаем звезды на экране конца уровня

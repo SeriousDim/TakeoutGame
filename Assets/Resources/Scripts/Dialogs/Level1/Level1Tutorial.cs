@@ -21,8 +21,7 @@ public class Level1Tutorial : AbstractTutorial
         header.text = "Управляй Грирменом";
         text.text = "Нажимайте на <color=#0000ffff>стрелки</color>, чтобы двигаться. " +
             "Чтобы подобрать <color=#0000ffff>мусор</color>, просто подойдите к нему и он " +
-            "подберется сам, если есть место в <color=#0000ffff>инвентаре</color>." +
-            "Нажмите на это окно, чтобы продолжить...";
+            "подберется сам, если есть место в <color=#0000ffff>инвентаре</color>.";
 
         SetButtonListener(() => Tutorial1_1());
     }

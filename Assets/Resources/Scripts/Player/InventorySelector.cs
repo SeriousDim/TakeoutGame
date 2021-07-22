@@ -71,7 +71,7 @@ public class InventorySelector : MonoBehaviour
             RemoveItem();
     }
 
-    void SelectInventoryItem(int index)
+    public void SelectInventoryItem(int index)
     {
         if (index != selected)
         {

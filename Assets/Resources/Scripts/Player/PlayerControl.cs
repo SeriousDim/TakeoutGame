@@ -22,6 +22,10 @@ public class PlayerControl : MonoBehaviour
     private bool onLadder = false;
     private float gravityScale;
 
+    private float mobileLadderClimbingDir = 0.0f;
+    private float mobileHorizontalMove = 0.0f;
+    private bool mobileJump = false;
+
     void Start()
     {
         renderer = GetComponent<SpriteRenderer>();
@@ -38,14 +42,42 @@ public class PlayerControl : MonoBehaviour
         
     }
 
+    public void DoMobileControl()
+    {
+        Move(mobileHorizontalMove);
+        Jump(mobileJump);
+        ClimbMobile(mobileLadderClimbingDir);
+    }
+
+    public void OnMobileClimb(float f)
+    {
+        mobileLadderClimbingDir = f;
+    }
+
+    public void OnMobileJump(bool b)
+    {
+        mobileJump = b;
+    }
+
+    public void OnMobileHorizontalTouched(float f)
+    {
+        mobileHorizontalMove = f;
+    }
+
     void Update()
     {
+#if UNITY_ANDROID
+        DoMobileControl();
+#endif
+
+#if UNITY_STANDALONE
         Move(Input.GetAxis("Horizontal"));
         Jump((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)));
         ClimbLadder();
+#endif
     }
 
-    void Jump(bool b)
+    public void Jump(bool b)
     {
         if (b && onGround && !onLadder)
         {
@@ -54,7 +86,7 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-    void Move(float direction)
+    public void Move(float direction)
     {
         Vector2 newPosition = Vector2.right * direction * speed * Time.deltaTime;
         animator.SetBool("running", (direction != 0));
@@ -76,7 +108,15 @@ public class PlayerControl : MonoBehaviour
         body.position += newPosition;
     }
 
-    void ClimbLadder()
+    public void ClimbMobile(float direction)
+    {
+        if (onLadder)
+        {
+            gameObject.transform.position += new Vector3(0, direction * ladderSpeed, 0) * Time.deltaTime;
+        }
+    }
+
+    public void ClimbLadder()
     {
         if (onLadder)
         {

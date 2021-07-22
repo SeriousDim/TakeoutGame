@@ -27,11 +27,11 @@ public class Level1Dialog : AbstractDialog
     {
         var dialogs = new List<DialogData>();
 
-        dialogs.Add(CreateGreenmanQuote("Привет/wait:0.5/. Добро пожаловать в славный город Челск."));
+        dialogs.Add(CreateGreenmanQuote("Привет/wait:0.5/. Добро пожаловать в славный город Свердчелск."));
 
-        dialogs.Add(CreateGreenmanQuote("<здесь пару славных слов про город>"));
+        dialogs.Add(CreateGreenmanQuote("Это очень красивый город, с красивой природой и многовековой историей."));
 
-        dialogs.Add(CreateGreenmanQuote("Я постоянно вижу, как люди просто портят красоту этого городу и природу своим..."));
+        dialogs.Add(CreateGreenmanQuote("Но я постоянно вижу, как люди просто портят красоту этого городу и природу своим..."));
 
         dialogs.Add(CreateGreenmanQuote("... мусором."));
 

@@ -142,6 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsView: {fileID: 0}
+  points: 0
 --- !u!114 &6822534228104087480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,7 +162,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   colItems: []
+  lvlManagerObj: {fileID: 0}
   interact: 0
+  INVENTORY_SIZE: 5
+  COLLECTION_INVENTORY_SIZE: 1
+  colInventory: []
 --- !u!212 &5764379884747020118
 SpriteRenderer:
   m_ObjectHideFlags: 0

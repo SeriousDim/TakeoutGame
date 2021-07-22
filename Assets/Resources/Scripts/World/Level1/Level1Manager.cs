@@ -9,9 +9,12 @@ using Takeout.DataWrappers;
 public class Level1Manager : LevelManager
 {
     public GameObject tutorial;
+    public GameObject advertObj;
 
     private bool tutorialThreeLeftShowed = false;
     private Level1Tutorial manager;
+
+    private SpriteRenderer renderer;
 
     private void Start()
     {
@@ -19,6 +22,8 @@ public class Level1Manager : LevelManager
         desc = new Descriptions[] { Descriptions.COLLECTION_RUBBISH, Descriptions.ADVERT_LVL1, Descriptions.LEVEL_COMPLETE };
 
         manager = tutorial.GetComponent<Level1Tutorial>();
+
+        renderer = advertObj.GetComponent<SpriteRenderer>();
 
         base.Start();
     }
@@ -66,8 +71,10 @@ public class Level1Manager : LevelManager
 
     public void ApplyAdvertStar()
     {
+        var sprite = Resources.Load<Sprite>("Sprites/Map/Used/Foreground/Level1/Billboard1");
+
         GiveStar(1);
-        // change advert
+        renderer.sprite = sprite;
 
         Debug.Log("Level1Manager.ApplyAdvertStar: star 1 added");
     }
