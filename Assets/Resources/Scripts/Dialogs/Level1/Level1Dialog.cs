@@ -31,15 +31,15 @@ public class Level1Dialog : AbstractDialog
 
         dialogs.Add(CreateGreenmanQuote("Это очень красивый город, с красивой природой и многовековой историей."));
 
-        dialogs.Add(CreateGreenmanQuote("Но я постоянно вижу, как люди просто портят красоту этого городу и природу своим..."));
+        dialogs.Add(CreateGreenmanQuote("Но я постоянно вижу, как люди просто портят красоту этого города и природу своим..."));
 
         dialogs.Add(CreateGreenmanQuote("... мусором."));
 
         dialogs.Add(CreateGreenmanQuote("Кто-то должен все это исправить, кто-то должен показать, что этого всего не должно быть."));
 
-        dialogs.Add(CreateGreenmanQuote("Меня зовут /color:yellow//size:30/Гринмен/color:white/, /wait:0.5/и я поставил себе именно такую цель!"));
+        dialogs.Add(CreateGreenmanQuote("Меня зовут "+ Yellow("Гринмен") +", /wait:0.5/и я поставил себе именно такую цель!"));
 
-        dialogs.Add(CreateGreenmanQuote("Но мне понадобится /color:blue//size:30/твоя/color:white/ помощь."));
+        dialogs.Add(CreateGreenmanQuote("Но мне понадобится "+ Blue("твоя") +" помощь."));
 
         var choice = StartChoice1();
 

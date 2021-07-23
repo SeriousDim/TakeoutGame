@@ -15,10 +15,10 @@ using Doublsb.Dialog;
 public class AbstractDialog : MonoBehaviour
 {
     public const string GREENMAN = "Гринмен";
-
+    
     public DialogManager manager;
     public GameObject nameLabel;
-    public int size = 30;
+    public int size = 46;
 
     private Text nameText;
 
@@ -45,7 +45,7 @@ public class AbstractDialog : MonoBehaviour
 
     public string Size()
     {
-        return "/size:" + size + "/";
+        return "/size:" + 46 + "/";
     }
 
     public string Blue(string text)

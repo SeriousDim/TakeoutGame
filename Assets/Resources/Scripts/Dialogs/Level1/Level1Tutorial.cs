@@ -18,7 +18,7 @@ public class Level1Tutorial : AbstractTutorial
     public void StartTutorial()
     {
         ShowWindow(true);
-        header.text = "Управляй Грирменом";
+        header.text = "Управляй Гринменом";
         text.text = "Нажимайте на <color=#0000ffff>стрелки</color>, чтобы двигаться. " +
             "Чтобы подобрать <color=#0000ffff>мусор</color>, просто подойдите к нему и он " +
             "подберется сам, если есть место в <color=#0000ffff>инвентаре</color>.";
@@ -32,7 +32,7 @@ public class Level1Tutorial : AbstractTutorial
             "<color=#0000ffff>Нажмите</color> на " +
             "ячейку, чтобы выбрать её. Нажмите на <color=#0000ffff>кнопку с " +
             "крестиком</color>, чтобы выкинуть выбранный мусор из инвентаря. Не " +
-            "забудьте за ним вернуться Мусорить не хорошо...";
+            "забудьте за ним вернуться. Мусорить не хорошо...";
 
         SetButtonListener(() => Tutorial1_2());
     }
@@ -63,19 +63,20 @@ public class Level1Tutorial : AbstractTutorial
         ShowWindow(true);
         header.text = "Лайкоины";
         text.text = "За выброшенный мусор начисляют " + Blue("лайкоины") + " - особую валюту. За нее " +
-            "можно будет покупать вещи, развивать персонажа, а также увеличивать " + Blue("популярность") +
-            "идеи Гринмена.";
+            "можно будет в будущем покупать вещи, развивать персонажа, а также увеличивать " + Blue("популярность") +
+            " идеи Гринмена.";
 
         SetButtonListener(() => Tutorial3_3());
     }
 
+    /*
     public void Tutorial3_2()
     {
         text.text = "Если ты выкинул мусор не в тот бачок, то лайкоины  уменьшаются. " +
             "Каждый тип мусора имеет свою цену в лайкоинах.";
 
         SetButtonListener(() => Tutorial3_3());
-    }
+    }*/
 
     public void Tutorial3_3()
     {

@@ -20,6 +20,16 @@ public class MenuManager : MonoBehaviour
         levelSelectorAnimator = levelSelector.GetComponent<Animator>();
     }
 
+    public void OpenDevPage()
+    {
+        Application.OpenURL("https://vk.com/dimaslykov");
+    }
+
+    public void OpenAppPage()
+    {
+        Application.OpenURL("http://unity3d.com/");
+    }
+
     public void ShowAboutPanel(bool b)
     {
         mainMenu.SetActive(!b);
