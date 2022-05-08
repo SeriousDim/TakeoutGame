@@ -27,7 +27,7 @@ public class MenuManager : MonoBehaviour
 
     public void OpenAppPage()
     {
-        Application.OpenURL("http://unity3d.com/");
+        Application.OpenURL("https://play.google.com/store/apps/details?id=ru.SeriousDim.Takeout");
     }
 
     public void ShowAboutPanel(bool b)

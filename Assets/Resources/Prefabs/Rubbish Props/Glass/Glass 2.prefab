@@ -48,6 +48,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -59,6 +60,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -71,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 6af720c1d7bfac44da5b08e18fd29a04, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 22a6adc31a7db83488959f2b2f5e0095, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,7 +101,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.35, y: 1.1}
+    oldSize: {x: 1.24, y: 0.82}
     newSize: {x: 0.35, y: 1.1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -107,16 +109,21 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.008563994, y: 0.54880613}
-      - {x: -0.098299295, y: 0.54816496}
-      - {x: -0.112092145, y: 0.13417141}
-      - {x: -0.17316273, y: 0.08475014}
-      - {x: -0.175, y: -0.53}
-      - {x: -0.044999998, y: -0.55}
-      - {x: 0.175, y: -0.55}
-      - {x: 0.1438059, y: -0.0006697859}
-      - {x: 0.13809475, y: 0.06538697}
-      - {x: 0.14031819, y: 0.54633003}
+    - - {x: 0.58, y: -0.03}
+      - {x: 0.62, y: 0.089999996}
+      - {x: 0.62, y: 0.41}
+      - {x: 0.34, y: 0.41}
+      - {x: -0.59999996, y: 0.31}
+      - {x: -0.62, y: 0.29999998}
+      - {x: -0.62, y: 0.07}
+      - {x: -0.55, y: -0.12}
+      - {x: -0.29, y: -0.28}
+      - {x: -0.35, y: -0.38}
+      - {x: -0.34, y: -0.41}
+      - {x: 0.44, y: -0.41}
+      - {x: 0.45, y: -0.37}
+      - {x: 0.38, y: -0.26999998}
+      - {x: 0.5, y: -0.16}
 --- !u!114 &7207908229306519815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,6 +136,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1a3eadc1839f7d41a0a6db693c52c34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colRubObj:
+    name: 0
+    status: 0
 --- !u!50 &7150007475662360733
 Rigidbody2D:
   serializedVersion: 4
